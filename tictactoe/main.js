@@ -1,14 +1,14 @@
 
-const empty = [null, null, null, null, null, null, null, null, null];
-const x = "X";
-const o = "O";
+let boxes = document.querySelectorAll('.box');
+boxes = Array.from(boxes);
+console.log(boxes);
 
-let currentPlayer = o;
+playerX = "X";
+playerO = "O";
+let currentPlayer = playerX;
 
-
-
-var eachBox = document.getElementsByClassName('box');
-
-eachBox.onclick = function() {
-    this.style.backgroundColor = 'red';
-}
+boxes.forEach(function(box){
+    box.addEventListener('click', function(){
+        box.innerText = currentPlayer;
+    })
+})
