@@ -9,7 +9,6 @@ let currentPlayer = playerX;
 
 let winningConditions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
 
-
 /*function youWon(){
 
     let won = false;
@@ -45,26 +44,41 @@ let winningConditions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [
     }
 }
 
+
 function won(){
     winningConditions.forEach(function(condition){
-    let check = condition.every.()
+    let check = condition.every
 })
 }
+
 */
+
+function won(){
+    winningConditions.forEach(function(condition){
+    let check = condition.every(idx => boxes[idx].innerText.trim() == currentPlayer);
+    if (check == true)
+    {
+        alert("You won")
+    }
+})
+}
+
 
 boxes.forEach(function(box){
     box.addEventListener('click', function(){
-        
         if (currentPlayer == playerX)
         {
             box.innerText = playerX;
+            won();
             currentPlayer = playerO;
         }
         else
         {
             box.innerText = playerO;
+            won();
             currentPlayer = playerX;
         }
+        
     })
 })
 
