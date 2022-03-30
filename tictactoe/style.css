@@ -8,6 +8,8 @@ body {
     height: 50px;
     border: solid 1px black;
     text-align: center;
+    font-size: 50px;
+    padding-bottom: 10px;
 }
 
 .container {

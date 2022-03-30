@@ -11,7 +11,7 @@ let winningConditions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [
 
 function won(){
     winningConditions.forEach(function(condition){
-    let check = condition.every(id => boxes[id].innerText.trim() == currentPlayer);
+    let check = condition.every(id => boxes[id].innerText == currentPlayer);
     if (check == true)
     {
         alert("You won")
