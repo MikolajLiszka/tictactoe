@@ -22,6 +22,7 @@ function won(){
 
 boxes.forEach(function(box){
     box.addEventListener('click', function(){
+        if(box.innerText != "") return;
         if (currentPlayer == playerX)
         {
             box.innerText = playerX;
